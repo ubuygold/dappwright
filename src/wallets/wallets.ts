@@ -32,6 +32,8 @@ export const getWallet = async (id: WalletIdOptions, browserContext: BrowserCont
     try {
       // Wait for the wallet to pop up
       page = await browserContext.waitForEvent('page', { timeout: 2000 });
+      await page.waitForTimeout(3000);
+      await page.reload();
       return new wallet(page);
     } catch {
       // Open the wallet manually if tab doesn't pop up

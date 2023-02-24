@@ -21,7 +21,7 @@ export async function launch(browserName: string, options: OfficialOptions): Pro
     path.join(sessionPath, officialOptions.wallet),
     {
       headless: headless ?? false,
-      args: [`--disable-extensions-except=${extensionPath}`, `--load-extension=${extensionPath}`],
+      args: [`--disable-extensions-except=${extensionPath}`, `--load-extension=${extensionPath}`, `--lang=en-US`],
     },
   );
 
